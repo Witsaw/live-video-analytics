@@ -63,6 +63,23 @@
 	  ],
 	  "processors": [
 		{
+			"@type": "#Microsoft.Media.MediaGraphMotionDetectionProcessor",
+			"name": "motionDetection",
+			"sensitivity": "${motionSensitivity}",
+			"inputs": [
+				{
+					"nodeName": "rtspSource",
+					"outputSelectors": [
+						{
+						  "property": "mediaType",
+						  "operator": "is",
+						  "value": "video"
+						}
+					  ]
+				}
+			]
+		},
+		{
 		  "@type": "#Microsoft.Media.MediaGraphHttpExtension",
 		  "name": "httpExtension",
 		  "endpoint": {
@@ -90,7 +107,7 @@
 		  },
 		  "inputs": [
 			{
-				"nodeName": "rtspSource",
+				"nodeName": "motionDetection",
 				"outputSelectors": [
 					{
 					"property": "mediaType",
