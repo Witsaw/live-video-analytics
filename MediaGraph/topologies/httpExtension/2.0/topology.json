@@ -78,7 +78,7 @@
       		{
 			"@type": "#Microsoft.Media.MediaGraphMotionDetectionProcessor",
 			"name": "motionDetection",
-			"sensitivity": "${motionSensitivity}",
+			"sensitivity": "medium",
 			"inputs": [
 				{
 					"nodeName": "rtspSource",
